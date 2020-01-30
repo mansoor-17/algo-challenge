@@ -1,4 +1,15 @@
-s = '';
+var readlineSync = require('readline-sync');
+const a = readlineSync.question('Enter 0 for iteration and 1 for recursion');
+const b = readlineSync.question('enter the number');
+
+if (a == 0) {
+  console.log(fiboiter(b));
+} else if (a == 1) {
+  console.log(fibo(n));
+} else {
+  console.log('Invalid Input');
+}
+
 function fibo(n) {
   if (n <= 1) {
     return n;
@@ -13,5 +24,3 @@ function fiboiter(n) {
   }
   return arr;
 }
-
-console.log(fiboiter(5));

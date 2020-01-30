@@ -91,7 +91,12 @@ function f(n) {
   if (Math.floor(n / 2)) {
     f(Math.floor(n / 2));
   }
-  return (s += n % 2);
+  return padding((s += n % 2));
 }
-
+function padding(str) {
+  for (var i = str.lenght; i <= 8; i++) {
+    str = '0' + str;
+  }
+  return str;
+}
 console.log(final);
