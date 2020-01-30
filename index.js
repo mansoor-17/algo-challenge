@@ -83,20 +83,19 @@ letters.forEach(function(element) {
       break;
     }
   }
-  const z = f(x);
-  final.push(z.padStart(8, '0'));
+  var z = f(x);
+  for (; z.length < 8; ) {
+    z = '0' + z;
+  }
+
+  final.push(z);
 });
 
 function f(n) {
   if (Math.floor(n / 2)) {
     f(Math.floor(n / 2));
+    s += n % 2;
   }
-  return padding((s += n % 2));
-}
-function padding(str) {
-  for (var i = str.lenght; i <= 8; i++) {
-    str = '0' + str;
-  }
-  return str;
+  return s;
 }
 console.log(final);
